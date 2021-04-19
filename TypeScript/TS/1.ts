@@ -3,7 +3,15 @@
 
 let nums: number[] = [100, 200, 300, 400, 500];
 
-let nums1: number[] = nums.slice(0, 3);
+// nums.pop();
+// nums.pop();
+// console.log(nums);
 
-// console.log(nums.splice(3, 2)); // 400, 500
-console.log(nums1);
+// let nums1: number[] = nums.slice(0, 3);
+
+// // console.log(nums.splice(3, 2)); // 400, 500
+// console.log(nums1);
+
+let numSplice: number[] = nums.splice(3, 2);
+
+console.log(nums);
