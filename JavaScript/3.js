@@ -5,3 +5,8 @@ var arr = [100, 200, 300];
 console.log(typeof arr);
 
 // object
+// number[]?
+// 원시 타입 : number, string, boolean, undefined, null
+// 참조 타입 : object
+
+// arr => object

@@ -7,7 +7,7 @@ console.log(typeof arr);
 // 2)  string
 // 3)  number
 // 4)  object
-
 // number[]?
-
-// ...WTF>?
+// 원시 타입 : number, string, boolean, undefined, null
+// 참조 타입 : object
+// arr => object
