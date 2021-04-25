@@ -6,5 +6,5 @@
 // 3)  입력 : a = 'p',   출력 : string
 // 4)  입력 : a = [1, 2, 3],   출력 : object
 // = 2!
-var vType = 2.22;
+let vType = 2.22;
 console.log(typeof vType);

@@ -24,14 +24,14 @@
 // }
 // console.log(tree);
 // ????????????????????????????????
-function christmasTree(height) {
-  var arr = [];
-  for (var i_1 = 1; i_1 <= height; i_1++) {
-    var space = Array(height - i_1 + 1).join(" ");
-    arr.push(space + Array(2 * i_1).join("*") + space);
-  }
-  return arr.join("n");
-}
+// function christmasTree(height: number) {
+//   let arr = [];
+//   for (let i = 1; i <= height; i++) {
+//     let space = Array(height - i + 1).join(" ");
+//     arr.push(space + Array(2 * i).join("*") + space);
+//   }
+//   return arr.join("n");
+// }
 // function christmasTree2(height: number) {
 //   var tree: string[] = [];
 //   for (var i = 1; i <= height; i++) {
@@ -46,3 +46,7 @@ function christmasTree(height) {
 // String.prototype.repeat = function (n) {
 //   return new Array(n + 1).join(this);
 // };
+// for
+for (let star = 1; star <= 10; star += 2) {
+    console.log(" ".repeat((10 - star) / 2) + "*".repeat(star));
+}

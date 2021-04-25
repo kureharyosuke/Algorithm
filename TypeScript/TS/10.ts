@@ -30,14 +30,14 @@
 // console.log(tree);
 // ????????????????????????????????
 
-function christmasTree(height: number) {
-  let arr = [];
-  for (let i = 1; i <= height; i++) {
-    let space = Array(height - i + 1).join(" ");
-    arr.push(space + Array(2 * i).join("*") + space);
-  }
-  return arr.join("n");
-}
+// function christmasTree(height: number) {
+//   let arr = [];
+//   for (let i = 1; i <= height; i++) {
+//     let space = Array(height - i + 1).join(" ");
+//     arr.push(space + Array(2 * i).join("*") + space);
+//   }
+//   return arr.join("n");
+// }
 
 // function christmasTree2(height: number) {
 //   var tree: string[] = [];
@@ -54,3 +54,8 @@ function christmasTree(height: number) {
 // String.prototype.repeat = function (n) {
 //   return new Array(n + 1).join(this);
 // };
+
+// for
+for (let star = 1; star <= 10; star += 2) {
+  console.log(" ".repeat((10 - star) / 2) + "*".repeat(star));
+}
