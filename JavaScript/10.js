@@ -25,11 +25,16 @@ let level = 5;
 //   }
 //   console.log(tree);
 // }
-function christmasTree(height) {
-  var arr = [];
-  for (var i_1 = 1; i_1 <= height; i_1++) {
-    var space = Array(height - i_1 + 1).join(" ");
-    arr.push(space + Array(2 * i_1).join("*") + space);
-  }
-  return arr.join("n");
+// function christmasTree(height) {
+//   var arr = [];
+//   for (var i_1 = 1; i_1 <= height; i_1++) {
+//     var space = Array(height - i_1 + 1).join(" ");
+//     arr.push(space + Array(2 * i_1).join("*") + space);
+//   }
+//   return arr.join("n");
+// }
+
+// for
+for (let star = 1; star <= 10; star += 2) {
+  console.log(" ".repeat((10 - star) / 2) + "*".repeat(star));
 }
