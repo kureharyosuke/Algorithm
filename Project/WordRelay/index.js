@@ -1,31 +1,31 @@
 /**
  * Word Relay
  */
-var bodyTS = document.body;
-var wordTS = document.createElement("div");
-wordTS.innerText = "apple";
-document.body.append(wordTS);
-var formTS = document.createElement("form");
-bodyTS.append(formTS);
-var inputTS = document.createElement("input");
-formTS.append(inputTS);
-var buttonTS = document.createElement("button");
-buttonTS.innerText = "Button";
-formTS.append(buttonTS);
-var resultTS = document.createElement("div");
-resultTS.innerText = "";
-bodyTS.append(resultTS);
-formTS.addEventListener("submit", function CallBack(event) {
+var body = document.body;
+var word = document.createElement("div");
+word.innerText = "apple";
+document.body.append(word);
+var form = document.createElement("form");
+body.append(form);
+var input = document.createElement("input");
+form.append(input);
+var button = document.createElement("button");
+button.innerText = "Button";
+form.append(button);
+var result = document.createElement("div");
+result.innerText = "";
+body.append(result);
+form.addEventListener("submit", function CallBack(event) {
     event.preventDefault();
-    if (wordTS.innerText[wordTS.innerText.length - 1] === inputTS.value[0]) {
-        resultTS.innerText = "Good!";
-        wordTS.innerText = inputTS.value;
-        inputTS.value = "";
-        inputTS.focus();
+    if (word.innerText[word.innerText.length - 1] === input.value[0]) {
+        result.innerText = "Good!";
+        word.innerText = input.value;
+        input.value = "";
+        input.focus();
     }
     else {
-        resultTS.innerText = "Bad!";
-        inputTS.value = "";
-        inputTS.focus();
+        result.innerText = "Bad!";
+        input.value = "";
+        input.focus();
     }
 });

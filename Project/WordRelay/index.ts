@@ -2,40 +2,40 @@
  * Word Relay
  */
 
-const bodyTS: HTMLElement = document.body;
+const body: HTMLElement = document.body;
 
-const wordTS: HTMLDivElement = document.createElement("div");
-wordTS.innerText = "apple";
-document.body.append(wordTS);
+const word: HTMLDivElement = document.createElement("div");
+word.innerText = "apple";
+document.body.append(word);
 
-const formTS: HTMLFormElement = document.createElement("form");
-bodyTS.append(formTS);
+const form: HTMLFormElement = document.createElement("form");
+body.append(form);
 
-const inputTS: HTMLInputElement = document.createElement("input");
-formTS.append(inputTS);
+const input: HTMLInputElement = document.createElement("input");
+form.append(input);
 
-const buttonTS: HTMLButtonElement = document.createElement("button");
-buttonTS.innerText = "Button";
-formTS.append(buttonTS);
+const button: HTMLButtonElement = document.createElement("button");
+button.innerText = "Button";
+form.append(button);
 
-const resultTS: HTMLDivElement = document.createElement("div");
-resultTS.innerText = "";
-bodyTS.append(resultTS);
+const result: HTMLDivElement = document.createElement("div");
+result.innerText = "";
+body.append(result);
 
-formTS.addEventListener("submit", function CallBack(event: Event) {
+form.addEventListener("submit", function CallBack(event: Event) {
   event.preventDefault();
 
-  if (wordTS.innerText[wordTS.innerText.length - 1] === inputTS.value[0]) {
-    resultTS.innerText = "Good!";
+  if (word.innerText[word.innerText.length - 1] === input.value[0]) {
+    result.innerText = "Good!";
 
-    wordTS.innerText = inputTS.value;
+    word.innerText = input.value;
 
-    inputTS.value = "";
-    inputTS.focus();
+    input.value = "";
+    input.focus();
   } else {
-    resultTS.innerText = "Bad!";
+    result.innerText = "Bad!";
 
-    inputTS.value = "";
-    inputTS.focus();
+    input.value = "";
+    input.focus();
   }
 });
