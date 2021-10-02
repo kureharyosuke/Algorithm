@@ -1,5 +1,7 @@
 /**
  * Word Relay
+ *
+ * word.innerText[word.innerText.length - 1] === input.value[0]
  */
 
 const body: HTMLElement = document.body;
