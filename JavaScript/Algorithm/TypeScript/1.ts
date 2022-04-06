@@ -5,7 +5,7 @@
  * (*정렬을 사용하면 안됩니다.) if문으로만,
  */
 
-function solution(a: number, b: number, c: number) {
+function solution(a: number, b: number, c: number): number {
   let answer: number;
 
   if (a < b) answer = a;
