@@ -23,3 +23,11 @@ function solutionTS2(a: number, b: number, c: number): number {
   answer = c < answer ? c : answer;
   return answer;
 }
+
+console.log(solutionTS2(6, 4, 11));
+
+function solutionTS3(...num: number[]): number {
+  return Math.min(...num);
+}
+
+console.log(solutionTS3(6, 4, 11));
