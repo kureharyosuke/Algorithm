@@ -5,7 +5,7 @@
  * (*정렬을 사용하면 안됩니다.) if문으로만,
  */
 
-function solution(a: number, b: number, c: number): number {
+function solutionTS(a: number, b: number, c: number): number {
   let answer: number;
 
   if (a < b) answer = a;
@@ -15,4 +15,11 @@ function solution(a: number, b: number, c: number): number {
   return answer;
 }
 
-console.log(solution(6, 4, 11));
+console.log(solutionTS(6, 4, 11));
+
+function solutionTS2(a: number, b: number, c: number): number {
+  let answer: number;
+  answer = a < b ? a : b;
+  answer = c < answer ? c : answer;
+  return answer;
+}
