@@ -26,8 +26,14 @@ function solutionTS2(a: number, b: number, c: number): number {
 
 console.log(solutionTS2(6, 4, 11));
 
-function solutionTS3(...num: number[]): number {
-  return Math.min(...num);
+function solutionTS3(...rest: number[]): number {
+  return Math.min(...rest);
 }
 
 console.log(solutionTS3(6, 4, 11));
+
+function solutionTS4(...rest: number[]): number {
+  return rest.sort((a, b) => a - b)[0];
+}
+
+console.log(solutionTS4(6, 4, 11));

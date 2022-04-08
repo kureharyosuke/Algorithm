@@ -21,8 +21,8 @@ function solution2(a, b, c) {
 
 console.log(solution2(2, 5, 1));
 
-function solution3(...args) {
-  return Math.min(...args);
+function solution3(...rest) {
+  return Math.min(...rest);
 }
 
 console.log(solution2(2, 5, 1));
