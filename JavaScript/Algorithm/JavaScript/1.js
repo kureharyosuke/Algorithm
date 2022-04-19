@@ -26,3 +26,7 @@ function solution3(...rest) {
 }
 
 console.log(solution2(2, 5, 1));
+
+function solution4(a, b, c) {
+  return Math.min(a, b, c);
+}
