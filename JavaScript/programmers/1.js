@@ -8,3 +8,5 @@ function solutionJS1(year, month, date) {
 }
 
 console.log(solutionJS1(2022, 4, 19));
+
+console.log(solutionJS1(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()));

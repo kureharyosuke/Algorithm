@@ -4,5 +4,5 @@
  */
 
 function solutionTS1(year: number, month: number, date: number): string {
-  return ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"][new Date(2016, month - 1, date).getDay()];
+  return ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"][new Date(year, month - 1, date).getDay()];
 }
