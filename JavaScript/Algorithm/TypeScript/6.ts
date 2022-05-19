@@ -37,9 +37,9 @@ const solutionTS6_3 = (number: number[]): string => {
 console.timeEnd("solutionTS6_3"); //solutionTS6_3: 0.002ms
 
 console.time("solutionTS6_4");
-function solutionTS6_4(number) {
-  const minNumber = Math.min(...number.filter((num) => num % 2 !== 0));
-  const reduce = number.filter((num) => num % 2 !== 0).reduce((acc, cur) => acc + cur);
+function solutionTS6_4(number: number[]): string {
+  const minNumber: number = Math.min(...number.filter((num) => num % 2 !== 0));
+  const reduce: number = number.filter((num) => num % 2 !== 0).reduce((acc, cur) => acc + cur);
   return `min number :${minNumber}, reduce : ${reduce}`;
 }
 console.timeEnd("solutionTS6_4"); //solutionTS6_4: 0.017ms
