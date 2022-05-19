@@ -7,3 +7,5 @@
 function solutionTS4(numberArr: number[], divisor: number): number[] {
   return numberArr.filter((num) => num % divisor === 0);
 }
+
+console.log(solutionTS4([5, 9, 7, 10], 5));
