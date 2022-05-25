@@ -10,7 +10,7 @@
 
 console.time("solutionJS9_0");
 function solutionJS9_0(string) {
-  return string.replace(/A/g, "#");
+  return string.replace(/A/g, "#"); // g: global, i: ignore case 글로벌로 전체를 찾아라
 }
 console.timeEnd("solutionJS9_0"); //solutionJS9_0: 0.061ms
 
