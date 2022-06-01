@@ -8,6 +8,7 @@
  * beautiful
  *
  * * solutionJS14_4
+ * array.sort((a, b) => b.length - a.length)[0]
  */
 
 console.time("solutionJS14_0");
