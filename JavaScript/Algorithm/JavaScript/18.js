@@ -33,19 +33,19 @@ console.log("solutionJS18_0", solutionJS18_0(numberArray));
 console.timeEnd("solutionJS18_0");
 
 console.time("solutionJS18_1");
-function solutionJS18_1(numberArray) {
-  let answer = [];
+function solutionJS18_1(numberArray, setNumber) {
+  const answer = [];
   for (const number of numberArray) {
-    if (number >= 6) answer.push(number);
+    if (number >= setNumber) answer.push(number);
   }
   return answer;
 }
-console.log("solutionJS18_1", solutionJS18_1(numberArray));
+console.log("solutionJS18_1", solutionJS18_1(numberArray, 6));
 console.timeEnd("solutionJS18_1");
 
 console.time("solutionJS18_2");
-function solutionJS18_2(numberArray) {
-  return numberArray.filter((num, index) => num >= 6);
+function solutionJS18_2(numberArray, setNumber) {
+  return numberArray.filter((num, index) => num >= setNumber);
 }
-console.log("solutionJS18_2", solutionJS18_2(numberArray));
+console.log("solutionJS18_2", solutionJS18_2(numberArray, 6));
 console.timeEnd("solutionJS18_2");
