@@ -19,7 +19,7 @@
  *
  */
 
-let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+let arr = [130, 135, 148, 140, 145, 150, 150, 153, 156, 167];
 
 console.time("solutionJS19_0");
 function solutionJS19_0(arr) {
@@ -41,8 +41,8 @@ console.time("solutionJS19_1");
 function solutionJS19_1(arr) {
   let answer = 1;
   let max = arr[0];
-  arr.filter((val) => {
-    if (val > max) {
+  arr.filter((val, idx) => {
+    if (arr[idx] > max) {
       answer++;
       max = val;
     }
