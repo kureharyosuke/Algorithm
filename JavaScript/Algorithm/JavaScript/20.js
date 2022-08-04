@@ -77,6 +77,22 @@ const solutionJS20_2 = (a, b) => {
 console.timeEnd("solutionJS20_2");
 console.log(solutionJS20_2(a, b));
 
+console.time("solutionJS20_3");
+const solutionJS20_3 = (a, b) => {
+  let answer = "";
+  const map = new Map();
+  map.set(...a);
+  for (const val of map.entries()) {
+    console.log("🚀 ~ file: 20.js ~ line 86 ~ val", val);
+    if (val === a) answer += "D" + " ";
+  }
+
+  return answer;
+};
+
+console.timeEnd("solutionJS20_3");
+console.log(solutionJS20_3(a, b));
+
 // solutionJS20_0: 0.054ms
 // A B A B D
 // solutionJS20_1: 0.003ms
