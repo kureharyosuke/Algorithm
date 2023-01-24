@@ -11,11 +11,11 @@ function isUniqueTS(string: string): boolean {
 	return true;
 }
 
-// function isUniqueTS2(string: string): boolean {
-// 	const map: Map<string, string> = new Map();
-// 	for (char of string) {
-// 		if (map.has(char)) return false;
-// 		map.set(char, true);
-// 	}
-// 	return true;
-// }
+function isUniqueTS2(string: string): boolean {
+	const map: Map<string, boolean> = new Map();
+	for (const char of string) {
+		if (map.has(char)) return false;
+		map.set(char, true);
+	}
+	return true;
+}
