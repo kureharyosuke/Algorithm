@@ -3,21 +3,21 @@
  */
 
 function isUnique(string) {
-  for (let i = 0; i < string.length; i++) {
-    for (let j = i + 1; j < string.length; j++) {
-      if (string[i] === string[j]) return false;
-    }
-  }
-  return true;
+	for (let i = 0; i < string.length; i++) {
+		for (let j = i + 1; j < string.length; j++) {
+			if (string[i] === string[j]) return false;
+		}
+	}
+	return true;
 }
 
 function isUnique2(string) {
-  const map = new Map();
-  for (char of string) {
-    if (map.has(char)) return false;
-    map.set(char, true);
-  }
-  return true;
+	const map = new Map();
+	for (char of string) {
+		if (map.has(char)) return false;
+		map.set(char, true);
+	}
+	return true;
 }
 
 console.log(isUnique(""), "true", "isUnique");

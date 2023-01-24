@@ -9,9 +9,9 @@
  */
 
 function checkPermutation(strA, strB) {
-  if (!strA || !strB || strA.length !== strB.length) return false;
-  const sortString = (string) => string.toLowerCase().split("").sort().join("");
-  return sortString(strA) === sortString(strB);
+	if (strA?.length !== strB?.length) return false;
+	const sortString = (string) => string.toLowerCase().split("").sort().join("");
+	return sortString(strA) === sortString(strB);
 }
 
 // 테스트 케이스
@@ -22,19 +22,19 @@ console.log(checkPermutation("aaabbbccc", "abcabcabc"), "true");
 console.log(checkPermutation("abaa", "abba"), "false");
 
 function checkPermutationHash(strA, strB) {
-  if (strA.length !== strB.length) return false;
-  const counts = new Map();
-  for (let char of strA) {
-    counts.set(char, counts.has(char) ? counts.get(char) + 1 : 1);
-  }
-  for (let char of strB) {
-    if (counts.get(char) && counts.get(char) !== 0) {
-      counts.set(char, counts.get(char) - 1);
-    } else {
-      return false;
-    }
-  }
-  return true;
+	if (strA.length !== strB.length) return false;
+	const counts = new Map();
+	for (let char of strA) {
+		counts.set(char, counts.has(char) ? counts.get(char) + 1 : 1);
+	}
+	for (let char of strB) {
+		if (counts.get(char) && counts.get(char) !== 0) {
+			counts.set(char, counts.get(char) - 1);
+		} else {
+			return false;
+		}
+	}
+	return true;
 }
 
 // 테스트 케이스2

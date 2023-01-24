@@ -2,9 +2,9 @@
  * 연필 개수 (12개 3다스)
  */
 function solutionJS3(num) {
-  let pencil = Math.ceil(num / 12);
-  let answer = pencil + "다스";
-  return answer;
+	let pencil = Math.ceil(num / 12);
+	const answer = `${pencil} + 다스`;
+	return answer;
 }
 
 console.log(solutionJS3(25)); // OUTPUT:3
