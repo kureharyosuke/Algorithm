@@ -52,3 +52,18 @@ function solutionJS22_2(array) {
 console.log("solutionJS22_2", solutionJS22_2(arr));
 console.log("solutionJS22_2", solutionJS22_2(arr2));
 console.timeEnd("solutionJS22_2"); // 0.299ms
+
+console.time("solutionJS22_3");
+function solutionJS22_3(array) {
+	const sortedRankings = [...array].sort((a, b) => b - a);
+	const ranks = [];
+
+	for (const [index, value] of array.entries()) {
+		const rank = sortedRankings.indexOf(array[index]) + 1;
+		ranks.push(rank);
+	}
+	return ranks;
+}
+console.log("solutionJS22_3", solutionJS22_3(arr));
+console.log("solutionJS22_3", solutionJS22_3(arr2));
+console.timeEnd("solutionJS22_3"); //0.381ms
