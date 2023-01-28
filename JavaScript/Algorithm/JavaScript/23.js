@@ -24,4 +24,90 @@ const arr = [
 	[19, 13, 30, 13, 19],
 ];
 
-function solutionJS23_0() {}
+console.time("solutionJS23_0");
+function solutionJS23_0(array) {
+	let answer = Number.MIN_SAFE_INTEGER;
+	const n = array.length;
+	let sum1 = 0;
+	let sum2 = 0;
+	for (let i = 0; i < n; i++) {
+		sum1 = 0;
+		sum2 = 0;
+		for (let j = 0; j < n; j++) {
+			sum1 += array[i][j]; // 열누적 / 가로줄
+			sum2 += array[j][i]; // 행누적 / 세로줄
+		}
+		answer = Math.max(answer, sum1, sum2);
+	}
+	sum1 = 0;
+	sum2 = 0;
+	for (let i = 0; i < n; i++) {
+		sum1 += array[i][i];
+		sum2 += array[i][n - i - 1];
+	}
+	answer = Math.max(answer, sum1, sum2);
+	return answer;
+}
+console.timeEnd("solutionJS23_0"); //0.066ms
+
+console.log(solutionJS23_0(arr));
+
+console.time("solutionJS23_1");
+function solutionJS23_1(array) {
+	const n = array.length;
+	let rowSum = 0;
+	let colSum = 0;
+	let diagonal1 = 0;
+	let diagonal2 = 0;
+	let maxSum = 0;
+
+	for (let i = 0; i < n; i++) {
+		rowSum = 0;
+		colSum = 0;
+		for (let j = 0; j < n; j++) {
+			rowSum += array[i][j];
+			colSum += array[j][i];
+			if (i === j) diagonal1 += array[i][j];
+			if (i + j === n - 1) diagonal2 += array[i][j];
+		}
+		maxSum = Math.max(maxSum, rowSum, colSum);
+	}
+	maxSum = Math.max(maxSum, diagonal1, diagonal2);
+	return maxSum;
+}
+console.timeEnd("solutionJS23_1"); //0.004ms
+
+console.log(solutionJS23_1(arr));
+
+console.time("solutionJS23_2");
+function solutionJS23_2(array) {
+	let maxSum = 0;
+
+	// row greater
+	for (let i = 0; i < array.length; i++) {
+		let rowSum = array[i].reduce((a, b) => a + b);
+		maxSum = Math.max(maxSum, rowSum);
+	}
+
+	// column greater
+	for (let i = 0; i < array.length; i++) {
+		let colSum = 0;
+		for (let j = 0; j < array.length; j++) {
+			colSum += array[j][i];
+		}
+		maxSum = Math.max(maxSum, colSum);
+	}
+
+	let diagonal1Sum = 0;
+	let diagonal2Sum = 0;
+	for (let i = 0; i < array.length; i++) {
+		diagonal1Sum += array[i][i];
+		diagonal2Sum += array[i][array.length - 1 - i];
+	}
+	maxSum = Math.max(maxSum, diagonal1Sum, diagonal2Sum);
+
+	return maxSum;
+}
+console.timeEnd("solutionJS23_2"); //0.004ms
+
+console.log(solutionJS23_2(arr));
