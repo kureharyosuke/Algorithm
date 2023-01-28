@@ -108,6 +108,28 @@ function solutionJS23_2(array) {
 
 	return maxSum;
 }
-console.timeEnd("solutionJS23_2"); //0.004ms
+console.timeEnd("solutionJS23_2"); // 0.003ms
 
 console.log(solutionJS23_2(arr));
+
+console.time("solutionJS23_3");
+function solutionJS23_3(array) {
+	const rowSums = array.map((row) => row.reduce((sum, num) => sum + num));
+
+	const colSums = array[0].map((_, colIndex) =>
+		array.reduce((sum, row) => sum + row[colIndex], 0),
+	);
+
+	const diag1Sum = array.reduce((sum, row, i) => sum + row[i], 0);
+	const diag2Sum = array.reduce(
+		(sum, row, i) => sum + row[array.length - 1 - i],
+		0,
+	);
+
+	const maxSum = Math.max(...rowSums, ...colSums, diag1Sum, diag2Sum);
+
+	return maxSum;
+}
+console.timeEnd("solutionJS23_3"); // 0.003ms
+
+console.log(solutionJS23_3(arr));
