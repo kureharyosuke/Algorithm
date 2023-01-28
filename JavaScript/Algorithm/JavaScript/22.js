@@ -16,8 +16,8 @@ const arr2 = [92, 92, 92, 100, 76];
 
 console.time("solutionJS22_0");
 function solutionJS22_0(array) {
-	let n = array.length;
-	let answer = Array.from({ length: n }, () => 1);
+	const n = array.length;
+	const answer = Array.from({ length: n }, () => 1);
 	for (let i = 0; i < n; i++) {
 		for (let j = 0; j < n; j++) {
 			if (array[j] > array[i]) answer[i]++;
@@ -67,3 +67,19 @@ function solutionJS22_3(array) {
 console.log("solutionJS22_3", solutionJS22_3(arr));
 console.log("solutionJS22_3", solutionJS22_3(arr2));
 console.timeEnd("solutionJS22_3"); //0.381ms
+
+console.time("solutionJS22_4");
+function solutionJS22_4(array) {
+	const sortedRankings = [...array].sort((a, b) => b - a);
+	const ranks = [];
+
+	array.forEach((value, index) => {
+		const rank = sortedRankings.indexOf(array[index]) + 1;
+		ranks.push(rank);
+	});
+
+	return ranks;
+}
+console.log("solutionJS22_4", solutionJS22_4(arr));
+console.log("solutionJS22_4", solutionJS22_4(arr2));
+console.timeEnd("solutionJS22_4"); // 0.337ms
