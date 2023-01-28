@@ -11,11 +11,10 @@
 // ▣ 출력예제 1
 // 4 3 2 1 5
 
-const arr = [87, 89, 92, 100, 76];
-const arr2 = [92, 92, 92, 100, 76];
+const arrTS: number[] = [87, 89, 92, 100, 76];
+const arrTS2: number[] = [92, 92, 92, 100, 76];
 
-console.time("solutionJS22_0");
-function solutionJS22_0(array) {
+function solutionTS22_0(array: number[]): number[] {
 	let n = array.length;
 	let answer = Array.from({ length: n }, () => 1);
 	for (let i = 0; i < n; i++) {
@@ -25,15 +24,11 @@ function solutionJS22_0(array) {
 	}
 	return answer;
 }
-console.log("solutionJS22_0", solutionJS22_0(arr));
-console.log("solutionJS22_0", solutionJS22_0(arr2));
-console.timeEnd("solutionJS22_0"); //6.041ms
 
-console.time("solutionJS22_1");
-function solutionJS22_1(array) {
+function solutionTS22_1(array: number[]): number[] {
 	// ! create a copy of the scores array
 	const sortedScores = [...array].sort((a, b) => b - a);
-	const ranks = [];
+	const ranks: number[] = [];
 
 	for (let i = 0; i < array.length; i++) {
 		const rank = sortedScores.indexOf(array[i]) + 1;
@@ -41,14 +36,7 @@ function solutionJS22_1(array) {
 	}
 	return ranks;
 }
-console.log("solutionJS22_1", solutionJS22_1(arr));
-console.log("solutionJS22_1", solutionJS22_1(arr2));
-console.timeEnd("solutionJS22_1"); //0.225ms
 
-console.time("solutionJS22_2");
-function solutionJS22_2(array) {
+function solutionTS22_2(array) {
 	return array.map((i) => array.filter((j) => i < j).length + 1);
 }
-console.log("solutionJS22_2", solutionJS22_2(arr));
-console.log("solutionJS22_2", solutionJS22_2(arr2));
-console.timeEnd("solutionJS22_2"); // 0.299ms
