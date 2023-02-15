@@ -81,6 +81,34 @@ function solutionJS24_1(array) {
 }
 console.timeEnd("solutionJS24_1");
 console.log(solutionJS24_1(arrayJS));
+
+function solutionJS24_2(array) {
+  const n = array.length
+  const dx = [-1, 0, 1, 0]
+  const dy = [0, 1, 0, -1]
+
+  const answer = array.reduce((accumulator, row, i) => {
+    return accumulator + row.reduce((rowAccumulator, value, j) => {
+      let flag = 1;
+
+      for (let k = 0;k < 4;k++) {
+        const nx = i + dx[k];
+        const ny = j + dy[k];
+
+        if (nx > 0 && nx < n && ny >= 0 && ny < n && array[nx][ny] > value) {
+          flag = 0;
+          break
+        }
+      }
+
+      return rowAccumulator + flag;
+    }, 0)
+  }, 0)
+
+  return answer
+}
+console.log('solutionJS24_2',solutionJS24_2(arrayJS));
+
 function countPeaks(grid) {
 	let peaks = 0;
 	for (let i = 1; i < grid.length - 1; i++) {
