@@ -109,6 +109,30 @@ function solutionJS24_2(array) {
 }
 console.log('solutionJS24_2',solutionJS24_2(arrayJS));
 
+function solutionTS24_1(array: Array<number[]>): number {
+  let answer = 0;
+  const n = array.length;
+  const dx = [-1, 0, 1, 0];
+  const dy = [0, 1, 0, -1];
+
+  for (let i = 1; i < n - 1; i++) {
+    for (let j = 1; j < n - 1; j++) {
+      const value = array[i][j];
+
+      if (
+        value > array[i - 1][j] &&
+        value > array[i][j + 1] &&
+        value > array[i + 1][j] &&
+        value > array[i][j - 1]
+      ) {
+        answer++;
+      }
+    }
+  }
+
+  return answer;
+}
+
 function countPeaks(grid) {
 	let peaks = 0;
 	for (let i = 1; i < grid.length - 1; i++) {
