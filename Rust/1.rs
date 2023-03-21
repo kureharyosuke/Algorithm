@@ -11,3 +11,7 @@ fn find_min(a: i32, b:i32, c:i32) -> i32 {
 
   return answer;
 }
+
+fn find_min2(a: i32, b:i32, c:i32) -> i32 {
+  [a, b, c].iter().min().unwrap().clone()
+}
