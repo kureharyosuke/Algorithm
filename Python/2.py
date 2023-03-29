@@ -1,3 +1,7 @@
+# 
+# 
+# 
+
 def solution2(a, b, c):
     return min(a, b, c)
 
