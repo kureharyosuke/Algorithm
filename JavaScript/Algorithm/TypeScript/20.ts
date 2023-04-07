@@ -26,6 +26,12 @@
  * 3  보
  */
 
+
+// a로 기준을 잡고
+//       A, B, A, B, D
+const a:number[] = [2, 3, 3, 1, 3];
+const b:number[] = [1, 1, 2, 2, 3];
+
 console.time("solutionTS20_0");
 function solutionTS20_0(a: number[], b: number[]):string {
   let answer = "";
@@ -39,15 +45,10 @@ function solutionTS20_0(a: number[], b: number[]):string {
   return answer;
 }
 console.timeEnd("solutionTS20_0");
-
-// a로 기준을 잡고
-//       A, B, A, B, D
-let a = [2, 3, 3, 1, 3];
-let b = [1, 1, 2, 2, 3];
 console.log(solutionTS20_0(a, b));
 
 console.time("solutionTS20_1");
-function solutionTS20_1(a, b) {
+function solutionTS20_1(a:number[], b:number[]):string {
   let answer = "";
   for (const [index, value] of a.entries()) {
     if (a[index] === b[index]) answer += "D" + " ";
@@ -62,7 +63,7 @@ console.timeEnd("solutionTS20_1");
 console.log(solutionTS20_1(a, b));
 
 console.time("solutionTS20_2");
-const solutionTS20_2 = (a, b) => {
+const solutionTS20_2 = (a:number[], b:number[]):string => {
   let answer = "";
   a.forEach((value, index) => {
     if (value === b[index]) answer += "D" + " ";
