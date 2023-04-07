@@ -21,3 +21,5 @@ function solutionJS25_1 (string){
     return string.toLowerCase().split().reverse().join() === string.toLowerCase() ? 'YES' : 'NO'
 }
 console.log(solutionJS25_1(str));
+
+const solutionJS25_2 = (string) => string.toLowerCase().split().reverse().join() === string.toLowerCase() ? 'YES' : 'NO'
