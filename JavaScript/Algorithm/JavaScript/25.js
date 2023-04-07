@@ -13,5 +13,11 @@
 // * ▣ 입력예제 1 gooG
 // * ▣ 출력예제 1 YES
 
+const str = 'gooG'
 
+function solutionJS25_0 (){}
 
+function solutionJS25_1 (string){
+    return string.toLowerCase().split().reverse().join() === string.toLowerCase() ? 'YES' : 'NO'
+}
+console.log(solutionJS25_1(str));
