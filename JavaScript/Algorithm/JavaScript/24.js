@@ -109,7 +109,7 @@ function solutionJS24_2(array) {
 }
 console.log('solutionJS24_2',solutionJS24_2(arrayJS));
 
-function solutionTS24_1(array: Array<number[]>): number {
+function solutionTS24_1(array) {
   let answer = 0;
   const n = array.length;
   const dx = [-1, 0, 1, 0];
