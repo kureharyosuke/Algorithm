@@ -18,7 +18,8 @@ const str = 'gooG'
 function solutionJS25_0 (){}
 
 function solutionJS25_1 (string){
-    return string.toLowerCase().split().reverse().join() === string.toLowerCase() ? 'YES' : 'NO'
+    const str = string.toLowerCase()
+    return str.split().reverse().join() === str ? 'YES' : 'NO'
 }
 console.log(solutionJS25_1(str));
 
