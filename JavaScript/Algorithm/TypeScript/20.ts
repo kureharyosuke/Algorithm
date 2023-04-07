@@ -26,8 +26,8 @@
  * 3  보
  */
 
-console.time("solutionJS20_0");
-function solutionJS20_0(a, b) {
+console.time("solutionTS20_0");
+function solutionTS20_0(a: number[], b: number[]):string {
   let answer = "";
   for (let i = 0; i < a.length; i++) {
     if (a[i] === b[i]) answer += "D" + " ";
@@ -38,16 +38,16 @@ function solutionJS20_0(a, b) {
   }
   return answer;
 }
-console.timeEnd("solutionJS20_0");
+console.timeEnd("solutionTS20_0");
 
 // a로 기준을 잡고
 //       A, B, A, B, D
 let a = [2, 3, 3, 1, 3];
 let b = [1, 1, 2, 2, 3];
-console.log(solutionJS20_0(a, b));
+console.log(solutionTS20_0(a, b));
 
-console.time("solutionJS20_1");
-function solutionJS20_1(a, b) {
+console.time("solutionTS20_1");
+function solutionTS20_1(a, b) {
   let answer = "";
   for (const [index, value] of a.entries()) {
     if (a[index] === b[index]) answer += "D" + " ";
@@ -58,11 +58,11 @@ function solutionJS20_1(a, b) {
   }
   return answer;
 }
-console.timeEnd("solutionJS20_1");
-console.log(solutionJS20_1(a, b));
+console.timeEnd("solutionTS20_1");
+console.log(solutionTS20_1(a, b));
 
-console.time("solutionJS20_2");
-const solutionJS20_2 = (a, b) => {
+console.time("solutionTS20_2");
+const solutionTS20_2 = (a, b) => {
   let answer = "";
   a.forEach((value, index) => {
     if (value === b[index]) answer += "D" + " ";
@@ -74,5 +74,6 @@ const solutionJS20_2 = (a, b) => {
   return answer;
 };
 
-console.timeEnd("solutionJS20_2");
-console.log(solutionJS20_2(a, b));
+console.timeEnd("solutionTS20_2");
+console.log(solutionTS20_2(a, b));
+
