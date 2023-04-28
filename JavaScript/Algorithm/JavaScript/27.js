@@ -13,3 +13,8 @@
 // * ▣ 입력예제 1 g0en2T0s8eSoft
 // * ▣ 출력예제 1 208
 
+function splitOfNumber (string) {
+    return string.split('').filter(val => new Set(val) && Number(val) ).join('')
+}
+
+console.log(splitOfNumber('g0en2T0s8eSoft'))
