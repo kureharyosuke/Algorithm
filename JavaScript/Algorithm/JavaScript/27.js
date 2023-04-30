@@ -12,12 +12,19 @@
 
 // * ▣ 입력예제 1 g0en2T0s8eSoft
 // * ▣ 출력예제 1 208
-<<<<<<< HEAD
 
 function splitOfNumber (string) {
     return string.split('').filter(val => new Set(val) && Number(val) ).join('')
 }
 
 console.log(splitOfNumber('g0en2T0s8eSoft'))
-=======
->>>>>>> 0ed948d9bbe99ec6e4a549c8e6eee7bf1b9456ba
+
+function solutionJS27_1(string) {
+  let numStr = ''
+  for (let i = 0; i <string.length; i++) {
+    if(!isNaN(string[i]) && string[i] !== ' ') {
+      numStr += string[i]
+    }
+  }
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_1 ~ solutionJS27_1:", solutionJS27_1('g0en2T0s8eSoft'))
