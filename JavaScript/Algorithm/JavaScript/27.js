@@ -28,3 +28,12 @@ function solutionJS27_1(string) {
   }
 }
 console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_1 ~ solutionJS27_1:", solutionJS27_1('g0en2T0s8eSoft'))
+
+function solutionJS27_2(string) {
+  const numsArr = string.split(' ')
+  .filter(str => !isNaN(str))
+  .map(Number);
+
+  return numsArr;
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_1 ~ solutionJS27_1:", solutionJS27_2('g0en2T0s8eSoft'))
