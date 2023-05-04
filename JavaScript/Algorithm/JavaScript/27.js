@@ -37,3 +37,10 @@ function solutionJS27_2(string) {
   return numsArr;
 }
 console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_1 ~ solutionJS27_1:", solutionJS27_2('g0en2T0s8eSoft'))
+
+function solutionJS27_3(string) {
+  const numsArr = string.match(/\d/g);
+  const naturalNumber = parseInt(numsArr.join(''));
+  return naturalNumber;
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_1 ~ solutionJS27_1:", solutionJS27_3('g0en2T0s8eSoft'))
