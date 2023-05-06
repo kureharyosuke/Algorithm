@@ -25,8 +25,11 @@ function solutionJS26_0() {}
 
 function solutionJS26_1(stringA, stringB) {
    // 알파벳과 숫자만 추출해서 대소문자를 구분하지 않고 소문자로 변환한 후 새로운 문자열 생성
-   const newStr = str.toLowerCase().match(/[a-z0-9]/g).join('');
+   const newStr = stringA.toLowerCase().split('').reverse().join('')
+   console.log("🚀 ~ file: 26.js:29 ~ solutionJS26_1 ~ stringA.toLowerCase().split('').reverse().join(''):", stringA.toLowerCase().split('').reverse().join(''))
+   console.log("🚀 ~ file: 26.js:29 ~ solutionJS26_1 ~ stringA.toLowerCase().split('').reverse().join(''):", stringB.toLowerCase().split('').reverse().join(''))
+
    // 앞에서부터 읽는 문자열과 뒤에서부터 읽는 문자열을 비교
-   return newStr === newStr.split('').reverse().join('');
+   return newStr === stringB.toLowerCase().split('').reverse().join('') ? 'YES' : 'NO'
 }
 console.log(solutionJS26_1(strA, strB))
