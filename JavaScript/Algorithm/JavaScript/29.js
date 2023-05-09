@@ -8,3 +8,8 @@
 // * 첫 줄에 압축된 문자열을 출력한다.
 // * ▣ 입력예제 1 KKHSSSSSSSE
 // * ▣ 출력예제 1 K2HS7E
+
+function solutionJS29_1(string) {
+    return string.replace(/(.)\1+/g, (match, str) => `${str}${match.length}`)
+}
+console.log("🚀 ~ file: 29.js:13 ~ solutionJS29_1 ~ solutionJS29_1:", solutionJS29_1('KKHSSSSSSSE'))
