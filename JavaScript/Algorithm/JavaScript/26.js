@@ -33,3 +33,11 @@ function solutionJS26_1(stringA, stringB) {
    return newStr === stringB.toLowerCase().split('').reverse().join('') ? 'YES' : 'NO'
 }
 console.log(solutionJS26_1(strA, strB))
+
+
+function solutionJS26_2(stringA, stringB) {
+   const strA = stringA.replace(/[^a-zA-Z]/g, '').toLowerCase().split('').sort().join('');
+   const strB = stringB.replace(/[^a-zA-Z]/g, '').toLowerCase().split('').sort().join('');
+   return strA === strB ? 'YES' : 'NO'
+}
+console.log("🚀 ~ file: 26.js:39 ~ solutionJS26_2 ~ solutionJS26_2:", solutionJS26_2(strA, strB))
