@@ -15,18 +15,13 @@
 
 // * ▣ 출력예제 1 YES
 
-const strA = 'found7'
-const strB = '7Dnuof'
-
-const objA = {'time': 'study'}
-const objB = { 'emit': 'Yduts'}
-
 function solutionJS26_0() {}
 
-function solutionJS26_1(stringA, stringB) {
-   // 알파벳과 숫자만 추출해서 대소문자를 구분하지 않고 소문자로 변환한 후 새로운 문자열 생성
-   const newStr = str.toLowerCase().match(/[a-z0-9]/g).join('');
-   // 앞에서부터 읽는 문자열과 뒤에서부터 읽는 문자열을 비교
-   return newStr === newStr.split('').reverse().join('');
+function solutionJS26_1(string) {
+  const processString = string.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  const reverseString = processString.split("").reverse().join("");
+
+  return processString === reverseString ? "YES" : "NO";
 }
-console.log(solutionJS26_1(strA, strB))
+console.log(solutionJS26_1("found7, time: study; Yduts; emit, 7Dnuof"));
