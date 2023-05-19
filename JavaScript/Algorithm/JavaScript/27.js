@@ -12,3 +12,47 @@
 
 // * ▣ 입력예제 1 g0en2T0s8eSoft
 // * ▣ 출력예제 1 208
+
+function splitOfNumber (string) {
+  const numStr = string.split('').filter(val => !isNaN(val)).join('');
+  return Number(numStr);
+}
+
+console.log("🚀 ~ file: 27.js:17 ~ splitOfNumber ~ splitOfNumber:", splitOfNumber('g0en2T0s8eSoft'))
+
+function solutionJS27_1(string) {
+  let numStr = '';
+  for (let i = 0; i < string.length; i++) {
+    if (!isNaN(string[i]) && string[i] !== ' ') {
+      numStr += string[i];
+    }
+  }
+  return Number(numStr);
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_1 ~ solutionJS27_1:", solutionJS27_1('g0en2T0s8eSoft'))
+
+function solutionJS27_2(string) {
+  const numsArr = string.split('')
+  .reduce((acc, curr) => {
+    if (!isNaN(curr)) {
+      return acc + curr;
+    } else {
+      return acc;
+    }
+  }, '');
+  return parseInt(numsArr, 10);
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_2 ~ solutionJS27_2:", solutionJS27_2('g0en2T0s8eSoft'))
+
+function solutionJS27_3(string) {
+  const numsArr = string.match(/\d/g);
+  const naturalNumber = parseInt(numsArr.join(''));
+  return naturalNumber;
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_3 ~ solutionJS27_3:", solutionJS27_3('g0en2T0s8eSoft'))
+
+function solutionJS27_4(string) {
+  const numbers = parseInt(string.replace(/[^0-9]/g, ''))
+  return numbers
+}
+console.log("🚀 ~ file: 27.js:23 ~ solutionJS27_4 ~ solutionJS27_4:", solutionJS27_4('g0en2T0s8eSoft'))
