@@ -12,26 +12,28 @@
 
 console.time("solutionJS6_1");
 function solutionJS6_1(number) {
-  const filterd = number.filter((num) => num % 2 !== 0);
-  const filterMinNum = Math.min(...filterd);
-  const filterdReduce = filterd.reduce((acc, cur) => acc + cur);
-  return `min number :${filterMinNum}, reduce : ${filterdReduce}`;
+  const filter = number.filter((num) => num % 2 !== 0);
+  const filterMinNum = Math.min(...filter);
+  const filterReduce = filter.reduce((acc, cur) => acc + cur);
+  return `min number :${filterMinNum}, reduce : ${filterReduce}`;
 }
 console.timeEnd("solutionJS6_1"); //solutionJS6_1: 0.055ms
 
 console.time("solutionJS6_2");
 const solutionJS6_2 = (number) => {
-  const filterd = number.filter((num) => num % 2 !== 0);
-  const filterMinNum = Math.min(...filterd);
-  const filterdReduce = filterd.reduce((acc, cur) => acc + cur);
-  return `min number :${filterMinNum}, reduce : ${filterdReduce}`;
+  const filter = number.filter((num) => num % 2 !== 0);
+  const filterMinNum = Math.min(...filter);
+  const filterReduce = filter.reduce((acc, cur) => acc + cur);
+  return `min number :${filterMinNum}, reduce : ${filterReduce}`;
 };
 console.timeEnd("solutionJS6_2"); //solutionJS6_2: 0.003ms
 
 console.time("solutionJS6_3");
 const solutionJS6_3 = (number) => {
   const minNumber = Math.min(...number.filter((num) => num % 2 !== 0));
-  const reduce = number.filter((num) => num % 2 !== 0).reduce((acc, cur) => acc + cur);
+  const reduce = number
+    .filter((num) => num % 2 !== 0)
+    .reduce((acc, cur) => acc + cur);
   return `min number :${minNumber}, reduce : ${reduce}`;
 };
 console.timeEnd("solutionJS6_3"); //solutionJS6_3: 0.002ms
@@ -39,7 +41,9 @@ console.timeEnd("solutionJS6_3"); //solutionJS6_3: 0.002ms
 console.time("solutionJS6_4");
 function solutionJS6_4(number) {
   const minNumber = Math.min(...number.filter((num) => num % 2 !== 0));
-  const reduce = number.filter((num) => num % 2 !== 0).reduce((acc, cur) => acc + cur);
+  const reduce = number
+    .filter((num) => num % 2 !== 0)
+    .reduce((acc, cur) => acc + cur);
   return `min number :${minNumber}, reduce : ${reduce}`;
 }
 console.timeEnd("solutionJS6_4"); //solutionJS6_4: 0.017ms
@@ -47,10 +51,10 @@ console.timeEnd("solutionJS6_4"); //solutionJS6_4: 0.017ms
 console.time("solutionJS6_5");
 const solutionJS6_5 = (number) => {
   const answer = [];
-  const filterd = number.filter((num) => num % 2 !== 0);
-  const filterMinNum = Math.min(...filterd);
-  const filterdReduce = filterd.reduce((acc, cur) => acc + cur);
-  answer.push(filterMinNum, filterdReduce);
+  const filter = number.filter((num) => num % 2 !== 0);
+  const filterMinNum = Math.min(...filter);
+  const filterReduce = filter.reduce((acc, cur) => acc + cur);
+  answer.push(filterMinNum, filterReduce);
   return answer;
 };
 console.timeEnd("solutionJS6_5");
@@ -59,7 +63,9 @@ console.time("solutionJS6_6");
 const solutionJS6_6 = (number) => {
   const answer = [];
   const minNumber = Math.min(...number.filter((num) => num % 2 !== 0));
-  const reduce = number.filter((num) => num % 2 !== 0).reduce((acc, cur) => acc + cur);
+  const reduce = number
+    .filter((num) => num % 2 !== 0)
+    .reduce((acc, cur) => acc + cur);
   answer.push(minNumber, reduce);
   return answer;
 };

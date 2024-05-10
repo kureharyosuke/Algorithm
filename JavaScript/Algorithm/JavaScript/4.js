@@ -5,9 +5,11 @@
  */
 
 function solutionJS4(arr, divisor) {
-  return arr.filter((num) => num % divisor === 0);
+  return arr.filter((num) => num % divisor === 0).length
+    ? arr.filter((num) => num % divisor === 0)
+    : -1;
 }
 
-console.log(solutionJS4([5, 7, 6, 10], 2));
+console.log(solutionJS4([5, 7, 6, 10], 4));
 
 console.log(solutionJS4([5, 9, 7, 10], 5)); //[ 5, 10 ]
