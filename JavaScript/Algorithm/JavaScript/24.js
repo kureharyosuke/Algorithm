@@ -22,94 +22,97 @@
 // 10
 
 const arrayJS = [
-	[5, 3, 7, 2, 3],
-	[3, 7, 1, 6, 1],
-	[7, 2, 5, 3, 4],
-	[4, 3, 6, 4, 1],
-	[8, 7, 3, 5, 2],
+  [5, 3, 7, 2, 3],
+  [3, 7, 1, 6, 1],
+  [7, 2, 5, 3, 4],
+  [4, 3, 6, 4, 1],
+  [8, 7, 3, 5, 2],
 ];
 
 console.time("solutionJS24_0");
 function solutionJS24_0(array) {
-	let answer = 0;
-	let n = array.length;
-	let dx = [-1, 0, 1, 0];
-	let dy = [0, 1, 0, -1];
-	for (let i = 0; i < n; i++) {
-		for (let j = 0; j < n; j++) {
-			let flag = 1;
-			for (let k = 0; k < 4; k++) {
-				let nx = i + dx[k];
-				let ny = j + dy[k];
-				if (
-					nx > 0 &&
-					nx < n &&
-					ny >= 0 &&
-					ny < n &&
-					array[nx][ny] > array[i][j]
-				) {
-					flag = 0;
-					break;
-				}
-			}
-			if (flag) answer++;
-		}
-	}
-	return answer;
+  let answer = 0;
+  let n = array.length;
+  let dx = [-1, 0, 1, 0];
+  let dy = [0, 1, 0, -1];
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      let flag = 1;
+      for (let k = 0; k < 4; k++) {
+        let nx = i + dx[k];
+        let ny = j + dy[k];
+        if (
+          nx > 0 &&
+          nx < n &&
+          ny >= 0 &&
+          ny < n &&
+          array[nx][ny] > array[i][j]
+        ) {
+          flag = 0;
+          break;
+        }
+      }
+      if (flag) answer++;
+    }
+  }
+  return answer;
 }
 console.timeEnd("solutionJS24_0");
 console.log(solutionJS24_0(arrayJS));
 
 console.time("solutionJS24_1");
 function solutionJS24_1(array) {
-	let count = 0;
-	for (let i = 1; i < array.length - 1; i++) {
-		for (let j = 1; j < array[i].length - 1; j++) {
-			if (
-				array[i][j] > array[i - 1][j] &&
-				array[i][j] > array[i + 1][j] &&
-				array[i][j] > array[i][j - 1] &&
-				array[i][j] > array[i][j + 1]
-			) {
-				count++;
-			}
-		}
-	}
-	console.log(`🚀 ~ file: 24.js:80 ~ solutionJS24_1 ~ count`, count);
+  let count = 0;
+  for (let i = 1; i < array.length - 1; i++) {
+    for (let j = 1; j < array[i].length - 1; j++) {
+      if (
+        array[i][j] > array[i - 1][j] &&
+        array[i][j] > array[i + 1][j] &&
+        array[i][j] > array[i][j - 1] &&
+        array[i][j] > array[i][j + 1]
+      ) {
+        count++;
+      }
+    }
+  }
+  console.log(`🚀 ~ file: 24.js:80 ~ solutionJS24_1 ~ count`, count);
 
-	return count;
+  return count;
 }
 console.timeEnd("solutionJS24_1");
 console.log(solutionJS24_1(arrayJS));
 
 function solutionJS24_2(array) {
-  const n = array.length
-  const dx = [-1, 0, 1, 0]
-  const dy = [0, 1, 0, -1]
+  const n = array.length;
+  const dx = [-1, 0, 1, 0];
+  const dy = [0, 1, 0, -1];
 
   const answer = array.reduce((accumulator, row, i) => {
-    return accumulator + row.reduce((rowAccumulator, value, j) => {
-      let flag = 1;
+    return (
+      accumulator +
+      row.reduce((rowAccumulator, value, j) => {
+        let flag = 1;
 
-      for (let k = 0;k < 4;k++) {
-        const nx = i + dx[k];
-        const ny = j + dy[k];
+        for (let k = 0; k < 4; k++) {
+          const nx = i + dx[k];
+          const ny = j + dy[k];
 
-        if (nx > 0 && nx < n && ny >= 0 && ny < n && array[nx][ny] > value) {
-          flag = 0;
-          break
+          if (nx > 0 && nx < n && ny >= 0 && ny < n && array[nx][ny] > value) {
+            flag = 0;
+            break;
+          }
         }
-      }
 
-      return rowAccumulator + flag;
-    }, 0)
-  }, 0)
+        return rowAccumulator + flag;
+      }, 0)
+    );
+  }, 0);
 
-  return answer
+  return answer;
 }
-console.log('solutionJS24_2',solutionJS24_2(arrayJS));
+console.log("solutionJS24_2", solutionJS24_2(arrayJS));
 
-function solutionTS24_1(array) {
+function solutionJS24_1(array) {
   let answer = 0;
   const n = array.length;
   const dx = [-1, 0, 1, 0];
@@ -133,28 +136,28 @@ function solutionTS24_1(array) {
   return answer;
 }
 
-function countPeaks(grid) {
-	let peaks = 0;
-	for (let i = 1; i < grid.length - 1; i++) {
-		for (let j = 1; j < grid[i].length - 1; j++) {
-			if (
-				grid[i][j] > grid[i - 1][j] &&
-				grid[i][j] > grid[i + 1][j] &&
-				grid[i][j] > grid[i][j - 1] &&
-				grid[i][j] > grid[i][j + 1]
-			) {
-				peaks++;
-			}
-		}
-	}
-	return peaks;
+function solutionJS24_2(grid) {
+  let peaks = 0;
+  for (let i = 1; i < grid.length - 1; i++) {
+    for (let j = 1; j < grid[i].length - 1; j++) {
+      if (
+        grid[i][j] > grid[i - 1][j] &&
+        grid[i][j] > grid[i + 1][j] &&
+        grid[i][j] > grid[i][j - 1] &&
+        grid[i][j] > grid[i][j + 1]
+      ) {
+        peaks++;
+      }
+    }
+  }
+  return peaks;
 }
 
 const grid = [
-	[5, 3, 7, 2, 3],
-	[3, 7, 1, 6, 1],
-	[7, 2, 5, 3, 4],
-	[4, 3, 6, 4, 1],
-	[8, 7, 3, 5, 2],
+  [5, 3, 7, 2, 3],
+  [3, 7, 1, 6, 1],
+  [7, 2, 5, 3, 4],
+  [4, 3, 6, 4, 1],
+  [8, 7, 3, 5, 2],
 ];
-console.log(countPeaks(grid)); // should output 10
+console.log(solutionJS24_2(grid)); // should output 10
