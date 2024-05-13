@@ -22,88 +22,88 @@
 // 10
 
 const arrayTS: Array<number[]> = [
-	[5, 3, 7, 2, 3],
-	[3, 7, 1, 6, 1],
-	[7, 2, 5, 3, 4],
-	[4, 3, 6, 4, 1],
-	[8, 7, 3, 5, 2],
+  [5, 3, 7, 2, 3],
+  [3, 7, 1, 6, 1],
+  [7, 2, 5, 3, 4],
+  [4, 3, 6, 4, 1],
+  [8, 7, 3, 5, 2],
 ];
 
 console.time("solutionTS24_0");
-function solutionTS24_0(array: Array<number[]>):number {
-	let answer = 0;
-	let n = array.length;
-	let dx = [-1, 0, 1, 0];
-	let dy = [0, 1, 0, -1];
-	for (let i = 0; i < n; i++) {
-		for (let j = 0; j < n; j++) {
-			let flag = 1;
-			for (let k = 0; k < 4; k++) {
-				let nx = i + dx[k];
-				let ny = j + dy[k];
-				if (
-					nx > 0 &&
-					nx < n &&
-					ny >= 0 &&
-					ny < n &&
-					array[nx][ny] > array[i][j]
-				) {
-					flag = 0;
-					break;
-				}
-			}
-			if (flag) answer++;
-		}
-	}
-	return answer;
+function solutionTS24_0(array: Array<number[]>): number {
+  let answer = 0;
+  let n = array.length;
+  let dx = [-1, 0, 1, 0];
+  let dy = [0, 1, 0, -1];
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      let flag = 1;
+      for (let k = 0; k < 4; k++) {
+        let nx = i + dx[k];
+        let ny = j + dy[k];
+        if (
+          nx > 0 &&
+          nx < n &&
+          ny >= 0 &&
+          ny < n &&
+          array[nx][ny] > array[i][j]
+        ) {
+          flag = 0;
+          break;
+        }
+      }
+      if (flag) answer++;
+    }
+  }
+  return answer;
 }
 console.timeEnd("solutionTS24_0");
 console.log(solutionTS24_0(arrayTS));
 
 console.time("solutionTS24_1");
-function solutionTS24_1(array:number[][]):number {
-	let count = 0;
-	for (let i = 1; i < array.length - 1; i++) {
-		for (let j = 1; j < array[i].length - 1; j++) {
-			if (
-				array[i][j] > array[i - 1][j] &&
-				array[i][j] > array[i + 1][j] &&
-				array[i][j] > array[i][j - 1] &&
-				array[i][j] > array[i][j + 1]
-			) {
-				count++;
-			}
-		}
-	}
-	console.log(`🚀 ~ file: 24.js:80 ~ solutionTS24_1 ~ count`, count);
+function solutionTS24_1(array: number[][]): number {
+  let count = 0;
+  for (let i = 1; i < array.length - 1; i++) {
+    for (let j = 1; j < array[i].length - 1; j++) {
+      if (
+        array[i][j] > array[i - 1][j] &&
+        array[i][j] > array[i + 1][j] &&
+        array[i][j] > array[i][j - 1] &&
+        array[i][j] > array[i][j + 1]
+      ) {
+        count++;
+      }
+    }
+  }
+  console.log(`🚀 ~ file: 24.js:80 ~ solutionTS24_1 ~ count`, count);
 
-	return count;
+  return count;
 }
 console.timeEnd("solutionTS24_1");
 console.log(solutionTS24_1(arrayTS));
-function countPeaks(grid:number[][]):number {
-	let peaks = 0;
-	for (let i = 1; i < grid.length - 1; i++) {
-		for (let j = 1; j < grid[i].length - 1; j++) {
-			if (
-				grid[i][j] > grid[i - 1][j] &&
-				grid[i][j] > grid[i + 1][j] &&
-				grid[i][j] > grid[i][j - 1] &&
-				grid[i][j] > grid[i][j + 1]
-			) {
-				peaks++;
-			}
-		}
-	}
-	return peaks;
+function solutionTS24_2(grid: number[][]): number {
+  let peaks = 0;
+  for (let i = 1; i < grid.length - 1; i++) {
+    for (let j = 1; j < grid[i].length - 1; j++) {
+      if (
+        grid[i][j] > grid[i - 1][j] &&
+        grid[i][j] > grid[i + 1][j] &&
+        grid[i][j] > grid[i][j - 1] &&
+        grid[i][j] > grid[i][j + 1]
+      ) {
+        peaks++;
+      }
+    }
+  }
+  return peaks;
 }
 
-const grid:number[][] = [
-	[5, 3, 7, 2, 3],
-	[3, 7, 1, 6, 1],
-	[7, 2, 5, 3, 4],
-	[4, 3, 6, 4, 1],
-	[8, 7, 3, 5, 2],
+const numsGrid: number[][] = [
+  [5, 3, 7, 2, 3],
+  [3, 7, 1, 6, 1],
+  [7, 2, 5, 3, 4],
+  [4, 3, 6, 4, 1],
+  [8, 7, 3, 5, 2],
 ];
 
-console.log(countPeaks(grid)); // should output 10
+console.log(solutionTS24_2(numsGrid)); // should output 10
